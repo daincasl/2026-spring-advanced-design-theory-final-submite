@@ -7,7 +7,7 @@
 제출 순서는 다음과 같습니다.
 
 1. 이 저장소를 본인 GitHub 계정으로 Fork합니다.
-2. 본인 순번과 이름으로 제출 폴더를 만듭니다.
+2. 본인 이름과 프로젝트명으로 제출 폴더를 만듭니다.
 3. 과제 파일을 본인 폴더 안에 넣습니다.
 4. 변경 내용을 commit하고 push합니다.
 5. 원본 저장소로 Pull Request를 보냅니다.
@@ -37,25 +37,26 @@ Git 명령어 사용이 어렵다면 GitHub Desktop을 사용해도 됩니다.
 폴더 이름은 아래 형식을 사용합니다.
 
 ```text
-번호.이름.최종과제.프로젝트명
+이름.최종과제.프로젝트명
 ```
 
-교수자 예시 자료는 `00`번으로 이미 올라와 있습니다.
+교수자 예시 자료는 `00`번으로 이미 올라와 있습니다. 학생은 `00`, `01`, `02` 같은 번호를 직접 붙이지 마세요.
 
 ```text
 00.김임환교수.최종과제.SSD.on.RSP.Project
 ```
 
-학생은 `01`번부터 순서대로 작성합니다.
+학생 제출 폴더 예시는 다음과 같습니다.
 
 ```text
-01.홍길동.최종과제.My.Project
-02.김철수.최종과제.Raspberry.Pi.Project
+홍길동.최종과제.My.Project
+김철수.최종과제.Raspberry.Pi.Project
 ```
 
 주의사항:
 
-- 번호는 두 자리로 작성합니다. 예: `01`, `02`, `03`
+- `00`은 교수자 예시 자료 전용입니다.
+- 학생 번호는 교수자가 제출 확인 후 필요하면 나중에 정리합니다.
 - 폴더 이름에 공백을 넣지 않습니다.
 - 프로젝트명에는 공백 대신 `.`을 사용합니다.
 - 다른 학생의 폴더를 수정하거나 삭제하지 않습니다.
@@ -70,7 +71,7 @@ Git 명령어 사용이 어렵다면 GitHub Desktop을 사용해도 됩니다.
 |   |-- README.md
 |   |-- project-page/
 |   `-- RSP_SSD_LAB/
-|-- 01.홍길동.최종과제.My.Project/
+|-- 홍길동.최종과제.My.Project/
 |   |-- README.md
 |   |-- report.pdf
 |   |-- source/
@@ -110,13 +111,13 @@ cd 2026-spring-advanced-design-theory-final-submite
 
 ### 3. 본인 폴더 만들기
 
-아래 예시처럼 본인 순번, 이름, 프로젝트명을 사용해 폴더를 만듭니다.
+아래 예시처럼 본인 이름과 프로젝트명을 사용해 폴더를 만듭니다.
 
 ```bash
-mkdir 01.홍길동.최종과제.My.Project
+mkdir 홍길동.최종과제.My.Project
 ```
 
-`01.홍길동.최종과제.My.Project` 부분은 반드시 본인의 순번, 이름, 프로젝트명으로 바꾸세요.
+`홍길동.최종과제.My.Project` 부분은 반드시 본인의 이름과 프로젝트명으로 바꾸세요.
 
 ### 4. 과제 파일 넣기
 
@@ -125,9 +126,9 @@ mkdir 01.홍길동.최종과제.My.Project
 예시:
 
 ```text
-01.홍길동.최종과제.My.Project/report.pdf
-01.홍길동.최종과제.My.Project/source/main.py
-01.홍길동.최종과제.My.Project/figures/result.png
+홍길동.최종과제.My.Project/report.pdf
+홍길동.최종과제.My.Project/source/main.py
+홍길동.최종과제.My.Project/figures/result.png
 ```
 
 다른 학생의 폴더는 수정하지 마세요.
@@ -139,13 +140,13 @@ mkdir 01.홍길동.최종과제.My.Project
 ```bash
 git status
 git add .
-git commit -m "Submit final project - 번호 이름"
+git commit -m "Submit final project - 이름"
 ```
 
 예시:
 
 ```bash
-git commit -m "Submit final project - 01 홍길동"
+git commit -m "Submit final project - 홍길동"
 ```
 
 ### 6. 본인 Fork로 올리기
@@ -172,13 +173,13 @@ git push
 5. Pull Request 제목은 아래 형식으로 작성합니다.
 
    ```text
-   [최종과제 제출] 번호 이름
+   [최종과제 제출] 이름
    ```
 
    예시:
 
    ```text
-   [최종과제 제출] 01 홍길동
+   [최종과제 제출] 홍길동
    ```
 
 6. **Create pull request**를 누릅니다.
@@ -206,7 +207,45 @@ git push
 - 다른 학생의 폴더나 파일을 수정하지 않습니다.
 - 다른 학생의 과제를 제출하지 않습니다.
 - `.DS_Store`, `.ipynb_checkpoints`, 임시 파일, 과제와 무관한 큰 데이터 파일은 넣지 않습니다.
+- 50MB 이상의 큰 파일은 저장소에 직접 올리지 말고, 아래의 "큰 파일 제출 방법"을 따릅니다.
 - 제출 시간은 Pull Request 생성 시간과 commit 기록을 기준으로 확인할 수 있습니다.
+
+## 큰 파일 제출 방법
+
+GitHub 일반 저장소에는 큰 파일을 직접 올리지 않는 것이 좋습니다.
+
+- 50MB 이상 파일: GitHub에서 경고가 발생할 수 있습니다.
+- 100MB 이상 파일: 일반 Git push가 차단됩니다.
+- 예: 큰 모델 파일, 데이터셋, 영상 파일, ZIP 압축 파일
+
+50MB 이상의 파일은 다음 방법 중 하나로 제출하세요.
+
+1. Google Drive 또는 OneDrive에 업로드합니다.
+2. 공유 권한을 "링크가 있는 사람은 보기 가능"으로 설정합니다.
+3. 본인 제출 폴더 안에 `README.md`를 만들고 다운로드 링크를 적습니다.
+
+예시:
+
+```text
+홍길동.최종과제.My.Project/
+|-- README.md
+|-- report.pdf
+`-- source/
+```
+
+`README.md` 예시:
+
+```text
+# 홍길동 최종과제
+
+## 큰 파일 다운로드
+
+- Dataset: https://drive.google.com/...
+- Demo video: https://drive.google.com/...
+- Model file: https://drive.google.com/...
+```
+
+GitHub Releases를 사용할 수 있는 학생은 Releases에 큰 파일을 첨부하고, 본인 `README.md`에 Release 다운로드 링크를 적어도 됩니다.
 
 ## 제출 확인 방법
 
@@ -215,7 +254,7 @@ Pull Request를 만든 뒤 다음을 확인하세요.
 - 원본 저장소의 **Pull requests** 탭에 본인의 Pull Request가 보이는지 확인합니다.
 - Pull Request 파일 목록에 본인 폴더가 보이는지 확인합니다.
 - 최종 과제 파일이 모두 포함되어 있는지 확인합니다.
-- Pull Request 제목이 `[최종과제 제출] 번호 이름` 형식인지 확인합니다.
+- Pull Request 제목이 `[최종과제 제출] 이름` 형식인지 확인합니다.
 
 ## 자주 발생하는 문제
 
@@ -240,7 +279,6 @@ Pull Request를 만든 뒤 다음을 확인하세요.
 즉시 교수자에게 연락하고 아래 정보를 함께 보내세요.
 
 - 이름
-- 제출 번호
 - 잘못 제출한 저장소 또는 Pull Request 주소
 - 올바른 저장소 또는 Pull Request 주소
 
